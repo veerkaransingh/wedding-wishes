@@ -4,496 +4,62 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Congratulations Mama Ji & Mami Ji</title>
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600&family=Montserrat:wght@300;400&family=Great+Vibes&display=swap');
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: 'Cormorant Garamond', serif;
-            background: 
-                radial-gradient(circle at 15% 50%, rgba(255, 230, 220, 0.2) 0%, transparent 50%),
-                radial-gradient(circle at 85% 80%, rgba(255, 210, 190, 0.2) 0%, transparent 50%),
-                linear-gradient(to bottom, #f8f5f1 0%, #e8dfd6 100%);
-            min-height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            padding: 40px 20px;
-            position: relative;
-        }
-
-        .sparkle {
-            position: fixed;
-            width: 4px;
-            height: 4px;
-            background: radial-gradient(circle, rgba(218, 165, 148, 0.8), transparent);
-            border-radius: 50%;
-            pointer-events: none;
-            animation: sparkle-float 8s ease-in-out infinite;
-            opacity: 0;
-        }
-
-        @keyframes sparkle-float {
-            0%, 100% { 
-                transform: translateY(0) scale(0);
-                opacity: 0;
-            }
-            50% { 
-                transform: translateY(-30px) scale(1);
-                opacity: 1;
-            }
-        }
-
-        .sparkle:nth-child(1) { left: 20%; top: 20%; animation-delay: 0s; }
-        .sparkle:nth-child(2) { left: 80%; top: 30%; animation-delay: 2s; }
-        .sparkle:nth-child(3) { left: 50%; top: 70%; animation-delay: 4s; }
-        .sparkle:nth-child(4) { left: 30%; top: 80%; animation-delay: 1s; }
-        .sparkle:nth-child(5) { left: 70%; top: 60%; animation-delay: 3s; }
-
-        .container {
-            max-width: 900px;
-            background: linear-gradient(to bottom, #ffffff 0%, #fffbf8 100%);
-            padding: 80px 60px;
-            box-shadow: 
-                0 0 0 1px rgba(139, 116, 95, 0.1),
-                0 30px 80px rgba(139, 116, 95, 0.15),
-                0 10px 30px rgba(139, 116, 95, 0.08);
-            position: relative;
-            animation: fadeInUp 0.8s ease-out;
-        }
-
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        .border-frame {
-            position: absolute;
-            top: 30px;
-            left: 30px;
-            right: 30px;
-            bottom: 30px;
-            border: 1px solid #c9b8a8;
-            pointer-events: none;
-        }
-
-        .border-frame::before,
-        .border-frame::after {
-            content: '';
-            position: absolute;
-            background: #c9b8a8;
-        }
-
-        .border-frame::before {
-            width: 40px;
-            height: 1px;
-            top: 50%;
-            left: -20px;
-        }
-
-        .border-frame::after {
-            width: 40px;
-            height: 1px;
-            top: 50%;
-            right: -20px;
-        }
-
-        .corner-ornament {
-            position: absolute;
-            width: 70px;
-            height: 70px;
-            border-style: solid;
-            border-color: #8b745f;
-        }
-
-        .corner-top-left {
-            top: 20px;
-            left: 20px;
-            border-width: 2px 0 0 2px;
-        }
-
-        .corner-top-right {
-            top: 20px;
-            right: 20px;
-            border-width: 2px 2px 0 0;
-        }
-
-        .corner-bottom-left {
-            bottom: 20px;
-            left: 20px;
-            border-width: 0 0 2px 2px;
-        }
-
-        .corner-bottom-right {
-            bottom: 20px;
-            right: 20px;
-            border-width: 0 2px 2px 0;
-        }
-
-        .corner-ornament::before {
-            content: '';
-            position: absolute;
-            width: 8px;
-            height: 8px;
-            background: #8b745f;
-            border-radius: 50%;
-        }
-
-        .corner-top-left::before {
-            top: -4px;
-            left: -4px;
-        }
-
-        .corner-top-right::before {
-            top: -4px;
-            right: -4px;
-        }
-
-        .corner-bottom-left::before {
-            bottom: -4px;
-            left: -4px;
-        }
-
-        .corner-bottom-right::before {
-            bottom: -4px;
-            right: -4px;
-        }
-
-        .content {
-            position: relative;
-            z-index: 1;
-        }
-
-        .header {
-            text-align: center;
-            margin-bottom: 60px;
-        }
-
-        .decorative-line {
-            width: 80px;
-            height: 1px;
-            background: linear-gradient(to right, transparent, #8b745f, transparent);
-            margin: 0 auto 30px;
-        }
-
-        .top-flourish {
-            width: 120px;
-            height: 30px;
-            margin: 0 auto 25px;
-            opacity: 0.5;
-        }
-
-        .top-flourish svg {
-            width: 100%;
-            height: 100%;
-        }
-
-        h1 {
-            font-size: 4em;
-            font-weight: 300;
-            color: #5a4a3a;
-            letter-spacing: 8px;
-            text-transform: uppercase;
-            margin-bottom: 20px;
-            line-height: 1.2;
-            animation: fadeIn 1s ease-out 0.3s both;
-        }
-
-        @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
-        }
-
-        .subtitle {
-            font-family: 'Montserrat', sans-serif;
-            font-size: 0.95em;
-            letter-spacing: 3px;
-            color: #8b745f;
-            text-transform: uppercase;
-            font-weight: 300;
-        }
-
-        .names-section {
-            text-align: center;
-            margin: 70px 0;
-            padding: 50px 0;
-            border-top: 1px solid #e5d9cc;
-            border-bottom: 1px solid #e5d9cc;
-            position: relative;
-            animation: fadeIn 1s ease-out 0.5s both;
-        }
-
-        .names-section::before,
-        .names-section::after {
-            content: '❖';
-            position: absolute;
-            font-size: 1.2em;
-            color: #c9b8a8;
-            top: 50%;
-            transform: translateY(-50%);
-        }
-
-        .names-section::before {
-            left: -15px;
-        }
-
-        .names-section::after {
-            right: -15px;
-        }
-
-        .names {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 40px;
-            flex-wrap: wrap;
-        }
-
-        .name {
-            font-size: 3em;
-            font-weight: 400;
-            color: #5a4a3a;
-            letter-spacing: 2px;
-            position: relative;
-        }
-
-        .name::after {
-            content: '';
-            position: absolute;
-            bottom: -8px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 60%;
-            height: 2px;
-            background: linear-gradient(to right, transparent, #c9b8a8, transparent);
-        }
-
-        .ampersand {
-            font-family: 'Great Vibes', cursive;
-            font-size: 3.5em;
-            color: #a89080;
-            font-weight: 400;
-        }
-
-        .flourish {
-            text-align: center;
-            margin: 40px 0;
-        }
-
-        .flourish svg {
-            width: 140px;
-            height: 35px;
-            opacity: 0.4;
-        }
-
-        .message {
-            text-align: center;
-            max-width: 650px;
-            margin: 0 auto;
-            line-height: 2.2;
-            color: #5a4a3a;
-            font-size: 1.35em;
-            animation: fadeIn 1s ease-out 0.7s both;
-        }
-
-        .message p {
-            margin-bottom: 30px;
-            position: relative;
-            padding: 0 20px;
-        }
-
-        .message p:last-child {
-            margin-bottom: 0;
-        }
-
-        .message p::before {
-            content: '"';
-            position: absolute;
-            left: 0;
-            top: -5px;
-            font-size: 2em;
-            color: #d4c0b0;
-            font-family: Georgia, serif;
-            opacity: 0.3;
-        }
-
-        .message p::after {
-            content: '"';
-            position: absolute;
-            right: 0;
-            bottom: -15px;
-            font-size: 2em;
-            color: #d4c0b0;
-            font-family: Georgia, serif;
-            opacity: 0.3;
-        }
-
-        .closing {
-            text-align: center;
-            margin-top: 70px;
-            padding-top: 40px;
-            border-top: 1px solid #e5d9cc;
-            animation: fadeIn 1s ease-out 0.9s both;
-        }
-
-        .heart-divider {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 15px;
-            margin-bottom: 30px;
-        }
-
-        .heart-divider-line {
-            width: 60px;
-            height: 1px;
-            background: linear-gradient(to right, transparent, #c9b8a8, transparent);
-        }
-
-        .heart-icon {
-            animation: heartbeat 2s ease-in-out infinite;
-        }
-
-        @keyframes heartbeat {
-            0%, 100% { transform: scale(1); }
-            10%, 30% { transform: scale(1.15); }
-            20%, 40% { transform: scale(1); }
-        }
-
-        .blessing {
-            font-size: 1.15em;
-            color: #8b745f;
-            font-style: italic;
-            line-height: 1.8;
-        }
-
-        .date-marker {
-            font-family: 'Montserrat', sans-serif;
-            font-size: 0.85em;
-            letter-spacing: 2px;
-            color: #a89080;
-            margin-top: 25px;
-            text-transform: uppercase;
-        }
-
-        @media (max-width: 768px) {
-            .container {
-                padding: 60px 30px;
-            }
-
-            .border-frame {
-                top: 20px;
-                left: 20px;
-                right: 20px;
-                bottom: 20px;
-            }
-
-            .corner-ornament {
-                width: 50px;
-                height: 50px;
-            }
-
-            .corner-top-left, .corner-top-right {
-                top: 12px;
-            }
-
-            .corner-bottom-left, .corner-bottom-right {
-                bottom: 12px;
-            }
-
-            .corner-top-left, .corner-bottom-left {
-                left: 12px;
-            }
-
-            .corner-top-right, .corner-bottom-right {
-                right: 12px;
-            }
-
-            h1 {
-                font-size: 2.8em;
-                letter-spacing: 4px;
-            }
-
-            .name {
-                font-size: 2.2em;
-            }
-
-            .ampersand {
-                font-size: 2.5em;
-            }
-
-            .message {
-                font-size: 1.2em;
-            }
-        }
-
-        @media (max-width: 480px) {
-            h1 {
-                font-size: 2.2em;
-                letter-spacing: 3px;
-            }
-
-            .names {
-                gap: 20px;
-            }
-
-            .name {
-                font-size: 1.8em;
-            }
-
-            .ampersand {
-                font-size: 2em;
-            }
-
-            .message {
-                font-size: 1.1em;
-                line-height: 2;
-            }
-
-            .message p {
-                padding: 0 10px;
-            }
-        }
-    </style>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="sparkle"></div>
-    <div class="sparkle"></div>
-    <div class="sparkle"></div>
-    <div class="sparkle"></div>
-    <div class="sparkle"></div>
+    <div id="petals-container"></div>
+    <div id="sparkles-container"></div>
 
     <div class="container">
         <div class="border-frame"></div>
+        <div class="inner-border"></div>
+        
         <div class="corner-ornament corner-top-left"></div>
         <div class="corner-ornament corner-top-right"></div>
         <div class="corner-ornament corner-bottom-left"></div>
         <div class="corner-ornament corner-bottom-right"></div>
 
+        <div class="corner-flourish flourish-top-left">
+            <svg viewBox="0 0 50 50" xmlns="http://www.w3.org/2000/svg">
+                <path d="M5,5 Q15,15 5,25 M5,5 Q15,15 25,5" stroke="#8b745f" stroke-width="1" fill="none"/>
+            </svg>
+        </div>
+        <div class="corner-flourish flourish-top-right">
+            <svg viewBox="0 0 50 50" xmlns="http://www.w3.org/2000/svg">
+                <path d="M5,5 Q15,15 5,25 M5,5 Q15,15 25,5" stroke="#8b745f" stroke-width="1" fill="none"/>
+            </svg>
+        </div>
+        <div class="corner-flourish flourish-bottom-left">
+            <svg viewBox="0 0 50 50" xmlns="http://www.w3.org/2000/svg">
+                <path d="M5,5 Q15,15 5,25 M5,5 Q15,15 25,5" stroke="#8b745f" stroke-width="1" fill="none"/>
+            </svg>
+        </div>
+        <div class="corner-flourish flourish-bottom-right">
+            <svg viewBox="0 0 50 50" xmlns="http://www.w3.org/2000/svg">
+                <path d="M5,5 Q15,15 5,25 M5,5 Q15,15 25,5" stroke="#8b745f" stroke-width="1" fill="none"/>
+            </svg>
+        </div>
+
         <div class="content">
             <div class="header">
+                <div class="monogram">
+                    <span class="monogram-text">M&M</span>
+                </div>
+                
                 <div class="top-flourish">
-                    <svg viewBox="0 0 240 60" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M0,30 Q40,10 80,30 T160,30 T240,30" 
+                    <svg viewBox="0 0 300 80" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M0,40 Q50,15 100,40 T200,40 T300,40" 
                               stroke="#8b745f" 
                               stroke-width="1" 
                               fill="none"/>
-                        <circle cx="120" cy="30" r="4" fill="#8b745f"/>
-                        <circle cx="80" cy="30" r="2" fill="#8b745f"/>
-                        <circle cx="160" cy="30" r="2" fill="#8b745f"/>
+                        <circle cx="150" cy="40" r="5" fill="#8b745f"/>
+                        <circle cx="100" cy="40" r="3" fill="#8b745f"/>
+                        <circle cx="200" cy="40" r="3" fill="#8b745f"/>
+                        <path d="M50,40 L60,30 L70,40" stroke="#8b745f" stroke-width="1" fill="none"/>
+                        <path d="M230,40 L240,30 L250,40" stroke="#8b745f" stroke-width="1" fill="none"/>
                     </svg>
                 </div>
+                
                 <div class="decorative-line"></div>
                 <h1>Congratulations</h1>
                 <div class="subtitle">On Your Marriage</div>
@@ -505,47 +71,84 @@
                     <span class="ampersand">&</span>
                     <span class="name">Mami Ji</span>
                 </div>
+                <div class="wedding-date">Forever Begins Now</div>
             </div>
 
             <div class="flourish">
-                <svg viewBox="0 0 280 70" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M0,35 Q35,10 70,35 T140,35 T210,35 T280,35" 
+                <svg viewBox="0 0 320 80" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M0,40 Q40,12 80,40 T160,40 T240,40 T320,40" 
                           stroke="#8b745f" 
                           stroke-width="0.8" 
                           fill="none"/>
-                    <circle cx="140" cy="35" r="5" fill="none" stroke="#8b745f" stroke-width="0.8"/>
-                    <circle cx="140" cy="35" r="2.5" fill="#8b745f"/>
-                    <path d="M40,35 L50,25 M50,25 L60,35" stroke="#8b745f" stroke-width="0.8" fill="none"/>
-                    <path d="M220,35 L230,25 M230,25 L240,35" stroke="#8b745f" stroke-width="0.8" fill="none"/>
+                    <circle cx="160" cy="40" r="6" fill="none" stroke="#8b745f" stroke-width="0.8"/>
+                    <circle cx="160" cy="40" r="3" fill="#8b745f"/>
+                    <path d="M50,40 L60,28 M60,28 L70,40" stroke="#8b745f" stroke-width="0.8" fill="none"/>
+                    <path d="M250,40 L260,28 M260,28 L270,40" stroke="#8b745f" stroke-width="0.8" fill="none"/>
+                    <circle cx="80" cy="40" r="2" fill="#8b745f"/>
+                    <circle cx="240" cy="40" r="2" fill="#8b745f"/>
                 </svg>
             </div>
 
+            <div class="quote-box">
+                <div class="love-quote">
+                    "A successful marriage requires falling in love many times,<br>always with the same person"
+                </div>
+            </div>
+
+            <div class="symbol-row">
+                <div class="symbol-line"></div>
+                <div class="symbol">❋</div>
+                <div class="symbol">✦</div>
+                <div class="symbol">❋</div>
+                <div class="symbol-line"></div>
+            </div>
+
             <div class="message">
-                <p>May your marriage be blessed with love, joy, and companionship for all the years of your lives.</p>
+                <p>May your marriage be blessed with eternal love, boundless joy, and unwavering companionship throughout all the years of your lives.</p>
                 
-                <p>Wishing you a lifetime of happiness and endless beautiful moments together as you embark on this sacred journey.</p>
+                <p>Wishing you both a lifetime of happiness, laughter, and countless beautiful memories as you embark on this sacred journey together.</p>
                 
-                <p>We are delighted to welcome you to our family, Mami Ji, and celebrate this beautiful union.</p>
+                <p>We are absolutely delighted to welcome you to our family, Mami Ji. May your bond flourish and grow stronger with each passing day.</p>
+            </div>
+
+            <div class="symbol-row">
+                <div class="symbol-line"></div>
+                <div class="symbol">✦</div>
+                <div class="symbol">❋</div>
+                <div class="symbol">✦</div>
+                <div class="symbol-line"></div>
             </div>
 
             <div class="closing">
                 <div class="heart-divider">
                     <div class="heart-divider-line"></div>
                     <div class="heart-icon">
-                        <svg width="24" height="22" viewBox="0 0 32 29.6">
+                        <svg width="26" height="24" viewBox="0 0 32 29.6">
                             <path d="M23.6,0c-3.4,0-6.3,2.7-7.6,5.6C14.7,2.7,11.8,0,8.4,0C3.8,0,0,3.8,0,8.4c0,9.4,9.5,11.9,16,21.2c6.1-9.3,16-12.1,16-21.2C32,3.8,28.2,0,23.6,0z" 
                                   fill="#c9b8a8"/>
                         </svg>
                     </div>
                     <div class="heart-divider-line"></div>
                 </div>
+                
                 <div class="blessing">
                     May your love grow deeper and your bond stronger<br>
-                    with each passing season
+                    with each passing season of life
                 </div>
+
+                <div class="final-ornament">
+                    <svg viewBox="0 0 120 40" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M0,20 L40,20 M80,20 L120,20" stroke="#8b745f" stroke-width="1" fill="none"/>
+                        <circle cx="60" cy="20" r="8" fill="none" stroke="#8b745f" stroke-width="1"/>
+                        <circle cx="60" cy="20" r="3" fill="#8b745f"/>
+                    </svg>
+                </div>
+                
                 <div class="date-marker">February 2026</div>
             </div>
         </div>
     </div>
+
+    <script src="script.js"></script>
 </body>
 </html>
