@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Congratulations Mama Ji & Mami Ji</title>
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600&family=Montserrat:wght@300;400&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600&family=Montserrat:wght@300;400&family=Great+Vibes&display=swap');
 
         * {
             margin: 0;
@@ -15,22 +15,67 @@
 
         body {
             font-family: 'Cormorant Garamond', serif;
-            background: linear-gradient(to bottom, #f8f5f1 0%, #e8dfd6 100%);
+            background: 
+                radial-gradient(circle at 15% 50%, rgba(255, 230, 220, 0.2) 0%, transparent 50%),
+                radial-gradient(circle at 85% 80%, rgba(255, 210, 190, 0.2) 0%, transparent 50%),
+                linear-gradient(to bottom, #f8f5f1 0%, #e8dfd6 100%);
             min-height: 100vh;
             display: flex;
             justify-content: center;
             align-items: center;
             padding: 40px 20px;
+            position: relative;
         }
+
+        .sparkle {
+            position: fixed;
+            width: 4px;
+            height: 4px;
+            background: radial-gradient(circle, rgba(218, 165, 148, 0.8), transparent);
+            border-radius: 50%;
+            pointer-events: none;
+            animation: sparkle-float 8s ease-in-out infinite;
+            opacity: 0;
+        }
+
+        @keyframes sparkle-float {
+            0%, 100% { 
+                transform: translateY(0) scale(0);
+                opacity: 0;
+            }
+            50% { 
+                transform: translateY(-30px) scale(1);
+                opacity: 1;
+            }
+        }
+
+        .sparkle:nth-child(1) { left: 20%; top: 20%; animation-delay: 0s; }
+        .sparkle:nth-child(2) { left: 80%; top: 30%; animation-delay: 2s; }
+        .sparkle:nth-child(3) { left: 50%; top: 70%; animation-delay: 4s; }
+        .sparkle:nth-child(4) { left: 30%; top: 80%; animation-delay: 1s; }
+        .sparkle:nth-child(5) { left: 70%; top: 60%; animation-delay: 3s; }
 
         .container {
             max-width: 900px;
-            background: #ffffff;
+            background: linear-gradient(to bottom, #ffffff 0%, #fffbf8 100%);
             padding: 80px 60px;
             box-shadow: 
                 0 0 0 1px rgba(139, 116, 95, 0.1),
-                0 20px 60px rgba(139, 116, 95, 0.15);
+                0 30px 80px rgba(139, 116, 95, 0.15),
+                0 10px 30px rgba(139, 116, 95, 0.08);
             position: relative;
+            animation: fadeInUp 0.8s ease-out;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
 
         .border-frame {
@@ -43,10 +88,31 @@
             pointer-events: none;
         }
 
+        .border-frame::before,
+        .border-frame::after {
+            content: '';
+            position: absolute;
+            background: #c9b8a8;
+        }
+
+        .border-frame::before {
+            width: 40px;
+            height: 1px;
+            top: 50%;
+            left: -20px;
+        }
+
+        .border-frame::after {
+            width: 40px;
+            height: 1px;
+            top: 50%;
+            right: -20px;
+        }
+
         .corner-ornament {
             position: absolute;
-            width: 60px;
-            height: 60px;
+            width: 70px;
+            height: 70px;
             border-style: solid;
             border-color: #8b745f;
         }
@@ -75,6 +141,35 @@
             border-width: 0 2px 2px 0;
         }
 
+        .corner-ornament::before {
+            content: '';
+            position: absolute;
+            width: 8px;
+            height: 8px;
+            background: #8b745f;
+            border-radius: 50%;
+        }
+
+        .corner-top-left::before {
+            top: -4px;
+            left: -4px;
+        }
+
+        .corner-top-right::before {
+            top: -4px;
+            right: -4px;
+        }
+
+        .corner-bottom-left::before {
+            bottom: -4px;
+            left: -4px;
+        }
+
+        .corner-bottom-right::before {
+            bottom: -4px;
+            right: -4px;
+        }
+
         .content {
             position: relative;
             z-index: 1;
@@ -88,8 +183,20 @@
         .decorative-line {
             width: 80px;
             height: 1px;
-            background: #8b745f;
+            background: linear-gradient(to right, transparent, #8b745f, transparent);
             margin: 0 auto 30px;
+        }
+
+        .top-flourish {
+            width: 120px;
+            height: 30px;
+            margin: 0 auto 25px;
+            opacity: 0.5;
+        }
+
+        .top-flourish svg {
+            width: 100%;
+            height: 100%;
         }
 
         h1 {
@@ -100,6 +207,12 @@
             text-transform: uppercase;
             margin-bottom: 20px;
             line-height: 1.2;
+            animation: fadeIn 1s ease-out 0.3s both;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
         }
 
         .subtitle {
@@ -117,6 +230,26 @@
             padding: 50px 0;
             border-top: 1px solid #e5d9cc;
             border-bottom: 1px solid #e5d9cc;
+            position: relative;
+            animation: fadeIn 1s ease-out 0.5s both;
+        }
+
+        .names-section::before,
+        .names-section::after {
+            content: '❖';
+            position: absolute;
+            font-size: 1.2em;
+            color: #c9b8a8;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+
+        .names-section::before {
+            left: -15px;
+        }
+
+        .names-section::after {
+            right: -15px;
         }
 
         .names {
@@ -132,13 +265,25 @@
             font-weight: 400;
             color: #5a4a3a;
             letter-spacing: 2px;
+            position: relative;
+        }
+
+        .name::after {
+            content: '';
+            position: absolute;
+            bottom: -8px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60%;
+            height: 2px;
+            background: linear-gradient(to right, transparent, #c9b8a8, transparent);
         }
 
         .ampersand {
-            font-size: 2.5em;
+            font-family: 'Great Vibes', cursive;
+            font-size: 3.5em;
             color: #a89080;
-            font-weight: 300;
-            font-style: italic;
+            font-weight: 400;
         }
 
         .flourish {
@@ -147,8 +292,8 @@
         }
 
         .flourish svg {
-            width: 100px;
-            height: 30px;
+            width: 140px;
+            height: 35px;
             opacity: 0.4;
         }
 
@@ -159,14 +304,39 @@
             line-height: 2.2;
             color: #5a4a3a;
             font-size: 1.35em;
+            animation: fadeIn 1s ease-out 0.7s both;
         }
 
         .message p {
             margin-bottom: 30px;
+            position: relative;
+            padding: 0 20px;
         }
 
         .message p:last-child {
             margin-bottom: 0;
+        }
+
+        .message p::before {
+            content: '"';
+            position: absolute;
+            left: 0;
+            top: -5px;
+            font-size: 2em;
+            color: #d4c0b0;
+            font-family: Georgia, serif;
+            opacity: 0.3;
+        }
+
+        .message p::after {
+            content: '"';
+            position: absolute;
+            right: 0;
+            bottom: -15px;
+            font-size: 2em;
+            color: #d4c0b0;
+            font-family: Georgia, serif;
+            opacity: 0.3;
         }
 
         .closing {
@@ -174,6 +344,31 @@
             margin-top: 70px;
             padding-top: 40px;
             border-top: 1px solid #e5d9cc;
+            animation: fadeIn 1s ease-out 0.9s both;
+        }
+
+        .heart-divider {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+            margin-bottom: 30px;
+        }
+
+        .heart-divider-line {
+            width: 60px;
+            height: 1px;
+            background: linear-gradient(to right, transparent, #c9b8a8, transparent);
+        }
+
+        .heart-icon {
+            animation: heartbeat 2s ease-in-out infinite;
+        }
+
+        @keyframes heartbeat {
+            0%, 100% { transform: scale(1); }
+            10%, 30% { transform: scale(1.15); }
+            20%, 40% { transform: scale(1); }
         }
 
         .blessing {
@@ -205,8 +400,8 @@
             }
 
             .corner-ornament {
-                width: 40px;
-                height: 40px;
+                width: 50px;
+                height: 50px;
             }
 
             .corner-top-left, .corner-top-right {
@@ -235,7 +430,7 @@
             }
 
             .ampersand {
-                font-size: 2em;
+                font-size: 2.5em;
             }
 
             .message {
@@ -257,14 +452,28 @@
                 font-size: 1.8em;
             }
 
+            .ampersand {
+                font-size: 2em;
+            }
+
             .message {
                 font-size: 1.1em;
                 line-height: 2;
+            }
+
+            .message p {
+                padding: 0 10px;
             }
         }
     </style>
 </head>
 <body>
+    <div class="sparkle"></div>
+    <div class="sparkle"></div>
+    <div class="sparkle"></div>
+    <div class="sparkle"></div>
+    <div class="sparkle"></div>
+
     <div class="container">
         <div class="border-frame"></div>
         <div class="corner-ornament corner-top-left"></div>
@@ -274,6 +483,17 @@
 
         <div class="content">
             <div class="header">
+                <div class="top-flourish">
+                    <svg viewBox="0 0 240 60" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M0,30 Q40,10 80,30 T160,30 T240,30" 
+                              stroke="#8b745f" 
+                              stroke-width="1" 
+                              fill="none"/>
+                        <circle cx="120" cy="30" r="4" fill="#8b745f"/>
+                        <circle cx="80" cy="30" r="2" fill="#8b745f"/>
+                        <circle cx="160" cy="30" r="2" fill="#8b745f"/>
+                    </svg>
+                </div>
                 <div class="decorative-line"></div>
                 <h1>Congratulations</h1>
                 <div class="subtitle">On Your Marriage</div>
@@ -288,12 +508,15 @@
             </div>
 
             <div class="flourish">
-                <svg viewBox="0 0 200 60" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M0,30 Q25,10 50,30 T100,30 T150,30 T200,30" 
+                <svg viewBox="0 0 280 70" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M0,35 Q35,10 70,35 T140,35 T210,35 T280,35" 
                           stroke="#8b745f" 
-                          stroke-width="0.5" 
+                          stroke-width="0.8" 
                           fill="none"/>
-                    <circle cx="100" cy="30" r="3" fill="#8b745f"/>
+                    <circle cx="140" cy="35" r="5" fill="none" stroke="#8b745f" stroke-width="0.8"/>
+                    <circle cx="140" cy="35" r="2.5" fill="#8b745f"/>
+                    <path d="M40,35 L50,25 M50,25 L60,35" stroke="#8b745f" stroke-width="0.8" fill="none"/>
+                    <path d="M220,35 L230,25 M230,25 L240,35" stroke="#8b745f" stroke-width="0.8" fill="none"/>
                 </svg>
             </div>
 
@@ -306,6 +529,16 @@
             </div>
 
             <div class="closing">
+                <div class="heart-divider">
+                    <div class="heart-divider-line"></div>
+                    <div class="heart-icon">
+                        <svg width="24" height="22" viewBox="0 0 32 29.6">
+                            <path d="M23.6,0c-3.4,0-6.3,2.7-7.6,5.6C14.7,2.7,11.8,0,8.4,0C3.8,0,0,3.8,0,8.4c0,9.4,9.5,11.9,16,21.2c6.1-9.3,16-12.1,16-21.2C32,3.8,28.2,0,23.6,0z" 
+                                  fill="#c9b8a8"/>
+                        </svg>
+                    </div>
+                    <div class="heart-divider-line"></div>
+                </div>
                 <div class="blessing">
                     May your love grow deeper and your bond stronger<br>
                     with each passing season
