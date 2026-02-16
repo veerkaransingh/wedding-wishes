@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Congratulations Mama Ji & Mami Ji</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600&family=Montserrat:wght@300;400&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Cormorant Garamond', serif;
+            background: linear-gradient(to bottom, #f8f5f1 0%, #e8dfd6 100%);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 40px 20px;
+        }
+
+        .container {
+            max-width: 900px;
+            background: #ffffff;
+            padding: 80px 60px;
+            box-shadow: 
+                0 0 0 1px rgba(139, 116, 95, 0.1),
+                0 20px 60px rgba(139, 116, 95, 0.15);
+            position: relative;
+        }
+
+        .border-frame {
+            position: absolute;
+            top: 30px;
+            left: 30px;
+            right: 30px;
+            bottom: 30px;
+            border: 1px solid #c9b8a8;
+            pointer-events: none;
+        }
+
+        .corner-ornament {
+            position: absolute;
+            width: 60px;
+            height: 60px;
+            border-style: solid;
+            border-color: #8b745f;
+        }
+
+        .corner-top-left {
+            top: 20px;
+            left: 20px;
+            border-width: 2px 0 0 2px;
+        }
+
+        .corner-top-right {
+            top: 20px;
+            right: 20px;
+            border-width: 2px 2px 0 0;
+        }
+
+        .corner-bottom-left {
+            bottom: 20px;
+            left: 20px;
+            border-width: 0 0 2px 2px;
+        }
+
+        .corner-bottom-right {
+            bottom: 20px;
+            right: 20px;
+            border-width: 0 2px 2px 0;
+        }
+
+        .content {
+            position: relative;
+            z-index: 1;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .decorative-line {
+            width: 80px;
+            height: 1px;
+            background: #8b745f;
+            margin: 0 auto 30px;
+        }
+
+        h1 {
+            font-size: 4em;
+            font-weight: 300;
+            color: #5a4a3a;
+            letter-spacing: 8px;
+            text-transform: uppercase;
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+
+        .subtitle {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.95em;
+            letter-spacing: 3px;
+            color: #8b745f;
+            text-transform: uppercase;
+            font-weight: 300;
+        }
+
+        .names-section {
+            text-align: center;
+            margin: 70px 0;
+            padding: 50px 0;
+            border-top: 1px solid #e5d9cc;
+            border-bottom: 1px solid #e5d9cc;
+        }
+
+        .names {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 40px;
+            flex-wrap: wrap;
+        }
+
+        .name {
+            font-size: 3em;
+            font-weight: 400;
+            color: #5a4a3a;
+            letter-spacing: 2px;
+        }
+
+        .ampersand {
+            font-size: 2.5em;
+            color: #a89080;
+            font-weight: 300;
+            font-style: italic;
+        }
+
+        .flourish {
+            text-align: center;
+            margin: 40px 0;
+        }
+
+        .flourish svg {
+            width: 100px;
+            height: 30px;
+            opacity: 0.4;
+        }
+
+        .message {
+            text-align: center;
+            max-width: 650px;
+            margin: 0 auto;
+            line-height: 2.2;
+            color: #5a4a3a;
+            font-size: 1.35em;
+        }
+
+        .message p {
+            margin-bottom: 30px;
+        }
+
+        .message p:last-child {
+            margin-bottom: 0;
+        }
+
+        .closing {
+            text-align: center;
+            margin-top: 70px;
+            padding-top: 40px;
+            border-top: 1px solid #e5d9cc;
+        }
+
+        .blessing {
+            font-size: 1.15em;
+            color: #8b745f;
+            font-style: italic;
+            line-height: 1.8;
+        }
+
+        .date-marker {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.85em;
+            letter-spacing: 2px;
+            color: #a89080;
+            margin-top: 25px;
+            text-transform: uppercase;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 60px 30px;
+            }
+
+            .border-frame {
+                top: 20px;
+                left: 20px;
+                right: 20px;
+                bottom: 20px;
+            }
+
+            .corner-ornament {
+                width: 40px;
+                height: 40px;
+            }
+
+            .corner-top-left, .corner-top-right {
+                top: 12px;
+            }
+
+            .corner-bottom-left, .corner-bottom-right {
+                bottom: 12px;
+            }
+
+            .corner-top-left, .corner-bottom-left {
+                left: 12px;
+            }
+
+            .corner-top-right, .corner-bottom-right {
+                right: 12px;
+            }
+
+            h1 {
+                font-size: 2.8em;
+                letter-spacing: 4px;
+            }
+
+            .name {
+                font-size: 2.2em;
+            }
+
+            .ampersand {
+                font-size: 2em;
+            }
+
+            .message {
+                font-size: 1.2em;
+            }
+        }
+
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 2.2em;
+                letter-spacing: 3px;
+            }
+
+            .names {
+                gap: 20px;
+            }
+
+            .name {
+                font-size: 1.8em;
+            }
+
+            .message {
+                font-size: 1.1em;
+                line-height: 2;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="border-frame"></div>
+        <div class="corner-ornament corner-top-left"></div>
+        <div class="corner-ornament corner-top-right"></div>
+        <div class="corner-ornament corner-bottom-left"></div>
+        <div class="corner-ornament corner-bottom-right"></div>
+
+        <div class="content">
+            <div class="header">
+                <div class="decorative-line"></div>
+                <h1>Congratulations</h1>
+                <div class="subtitle">On Your Marriage</div>
+            </div>
+
+            <div class="names-section">
+                <div class="names">
+                    <span class="name">Mama Ji</span>
+                    <span class="ampersand">&</span>
+                    <span class="name">Mami Ji</span>
+                </div>
+            </div>
+
+            <div class="flourish">
+                <svg viewBox="0 0 200 60" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M0,30 Q25,10 50,30 T100,30 T150,30 T200,30" 
+                          stroke="#8b745f" 
+                          stroke-width="0.5" 
+                          fill="none"/>
+                    <circle cx="100" cy="30" r="3" fill="#8b745f"/>
+                </svg>
+            </div>
+
+            <div class="message">
+                <p>May your marriage be blessed with love, joy, and companionship for all the years of your lives.</p>
+                
+                <p>Wishing you a lifetime of happiness and endless beautiful moments together as you embark on this sacred journey.</p>
+                
+                <p>We are delighted to welcome you to our family, Mami Ji, and celebrate this beautiful union.</p>
+            </div>
+
+            <div class="closing">
+                <div class="blessing">
+                    May your love grow deeper and your bond stronger<br>
+                    with each passing season
+                </div>
+                <div class="date-marker">February 2026</div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
